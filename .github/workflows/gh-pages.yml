@@ -20,16 +20,22 @@ jobs:
       run: git config --global user.email "github-action@example.com"
     - name: Git Config name
       run: git config --global user.name "GitHub Action"
+    - name: Git Fetch
+      run: git fetch origin --verbose --write-commit-graph
+    - name: Git Log
+      run: git log --oneline --graph --decorate
     - name: Git Checkout
-      run: git checkout -b gh-pages
-    - name: Git Merge
-      run: git merge --squash --verbose -Xtheirs origin/master
+      run: git checkout -b gh-pages origin/gh-pages
+    - name: Git Merge github pages
+      run: git merge --ff-only --squash --verbose -Xtheirs origin/gh-pages
+    - name: Git Merge master
+      run: git merge --squash --verbose --allow-unrelated-histories -Xtheirs origin/master
     - name: Npm install
       run: npm install
     - name: Build
       run: npm run build
     - name: Git Delete unused files
-      run: git rm -r --force --ignore-unmatch src Cargo.toml package.json
+      run: git rm -r --force --ignore-unmatch src Cargo.toml package.json webpack.config.js
     - name: Git Add
       run: git add --all --verbose
     - name: Git Add dist
