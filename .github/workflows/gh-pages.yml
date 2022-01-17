@@ -31,4 +31,4 @@ jobs:
     - name: Git Commit
       run: git commit -m "build and push to github pages" --allow-empty --verbose
     - name: Push
-      run: git push origin/gh-pages
+      run: git push origin gh-pages
