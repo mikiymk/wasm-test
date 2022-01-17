@@ -33,13 +33,11 @@ jobs:
     - name: Npm install
       run: npm install
     - name: Build
-      run: npm run build
+      run: npm run build --output-path="./docs"
     - name: Git Delete unused files
-      run: git rm -r --force --ignore-unmatch src Cargo.toml package.json webpack.config.js
+      run: git rm -r --force --ignore-unmatch src dist Cargo.toml package.json webpack.config.js
     - name: Git Add
       run: git add --all --verbose
-    - name: Git Add dist
-      run: git add --force --verbose dist
     - name: Git Commit
       run: git commit -m "build and push to github pages" --allow-empty --verbose
     - name: Push
