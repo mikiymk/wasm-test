@@ -21,7 +21,7 @@ jobs:
     - name: Git Config name
       run: git config --global user.name "GitHub Action"
     - name: Git Checkout
-      run: git checkout -b gh-pages
+      run: git checkout -b gh-pages origin/gh-pages
     - name: Git Merge
       run: git merge --squash --verbose -Xtheirs origin/master
     - name: Npm install
