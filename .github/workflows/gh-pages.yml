@@ -16,6 +16,10 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: "14"
+    - name: Git Config email
+      run: git config --global user.email "github-action@example.com"
+    - name: Git Config name
+      run: git config --global user.name "GitHub Action"
     - name: Git Checkout
       run: git checkout -b gh-pages
     - name: Git Merge
