@@ -24,7 +24,9 @@ jobs:
       run: git fetch origin --verbose --write-commit-graph
     - name: Git Checkout
       run: git checkout -b gh-pages
-    - name: Git Merge
+    - name: Git Merge master
+      run: git merge --ff-only --squash --verbose -Xtheirs origin/gh-pages
+    - name: Git Merge master
       run: git merge --squash --verbose -Xtheirs origin/master
     - name: Npm install
       run: npm install
