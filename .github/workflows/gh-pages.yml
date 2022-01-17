@@ -27,7 +27,7 @@ jobs:
     - name: Git Add
       run: git add --all --verbose
     - name: Git Add dist
-      run git add --force --verbose dist
+      run: git add --force --verbose dist
     - name: Git Commit
       run: git commit -m "build and push to github pages" --allow-empty --verbose
     - name: Push
