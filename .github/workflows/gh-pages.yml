@@ -19,7 +19,7 @@ jobs:
     - name: Git Checkout
       run: git checkout -b gh-pages
     - name: Git Merge
-      run: git merge --no-ff --squash --verbose -Xtheirs origin/master
+      run: git merge --squash --verbose -Xtheirs origin/master
     - name: Build
       run: npm run build
     - name: Git Delete unused files
