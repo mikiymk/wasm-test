@@ -20,8 +20,10 @@ jobs:
       run: git config --global user.email "github-action@example.com"
     - name: Git Config name
       run: git config --global user.name "GitHub Action"
+    - name: Git Fetch
+      run: git fetch origin --verbose --write-commit-graph
     - name: Git Checkout
-      run: git checkout -b gh-pages origin/gh-pages
+      run: git checkout -b gh-pages
     - name: Git Merge
       run: git merge --squash --verbose -Xtheirs origin/master
     - name: Npm install
