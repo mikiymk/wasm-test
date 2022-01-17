@@ -23,7 +23,7 @@ jobs:
     - name: Git Fetch
       run: git fetch origin --verbose --write-commit-graph
     - name: Git Log
-      run: git log --oneline --graph --decorate
+      run: git log --oneline --graph --decorate --all
     - name: Git Checkout
       run: git checkout -b gh-pages origin/gh-pages
     - name: Git Merge github pages
