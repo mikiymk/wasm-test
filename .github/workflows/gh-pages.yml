@@ -20,6 +20,8 @@ jobs:
       run: git checkout -b gh-pages
     - name: Git Merge
       run: git merge --squash --verbose -Xtheirs origin/master
+    - name: Npm install
+      run: npm install
     - name: Build
       run: npm run build
     - name: Git Delete unused files
